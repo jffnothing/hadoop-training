@@ -1,0 +1,15 @@
+example 1
+用 native java 实现对数据模型的操作
+homework:
+H1：
+Sogou 500w 灌入HBase集群，使用native java实现，要求如下：
+（1）rowkey=uid
+（2）其他字段作为cell的值
+（3）列族只设置一个
+（4）统计灌入时间
+（5）如何优化灌入操作
+（6）参照WEB UI查看requestPerSecond
+
+H2：过滤器使用
+（1）查询搜索过“仙剑奇侠传”的所有独立用户
+（2）点击URL中出现“baidu.com”的独立用户

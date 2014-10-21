@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /home/zkpk/sogou.500w.utf8 | awk '{if(substr($1,9,6)>="070000" && substr($1,9,6)<="090000" && $3~"赶集网" && $6~"ganji.com" ){print $2}}' |sort |uniq > hw202.txt

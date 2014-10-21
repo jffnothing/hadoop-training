@@ -1,0 +1,16 @@
+new mapreduce api:
+example 8-1
+example 8-2
+example 8-3
+example 8-4
+
+old mapreduce api:
+example 8-5
+example 8-6
+example 8-7
+
+homework1
+h1: 实现shell脚本，需求如下：
+每周五凌晨2点，将Master节点上，Hadoop产生的日志文件，
+先压缩为.tar.gz文件，然后备份到Slave节点的/log/master目录中，
+并且按照日期命令文件夹，如20140808目录表示2014年8月8日备份一次日志。

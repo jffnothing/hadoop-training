@@ -1,0 +1,10 @@
+H2：
+设计一张HBase表，存储sogou500w数据，rowkey要包含uid字段，
+表中每行存储500w文件的一行，并且要求表的行数刚好是500w
+
+解答：
+用linux命令awk对sogou.500w.utf8文件进行处理，处理后的字段为：
+uid_timestamp	time	keyword	rank	order	url
+
+然后插入文件：用native java、mapreduce、sqoop均可,在此选用native java.
+详细代码参见org.zkpk.hadoop.day0916.hw01.HBaseSogou

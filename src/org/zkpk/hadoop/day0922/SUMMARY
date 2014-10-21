@@ -1,0 +1,15 @@
+H1:
+DependentColumnFileter
+SingleColumnValueExcludeFilter
+RegexStringFilter
+
+H2:
+412  testIncr 
+414 多列counter
+
+H3：
+实现一个coprocessor：
+Sogou 500w数据（抽取前50w作为样本数据）入库，使用coprocessor实现日期的拆分，拆分为年、月、日、时四个字段，并且写入HBase库中。
+使用native java api实现客户端
+Coprocessor使用java实现
+使用shell方式部署协处理器

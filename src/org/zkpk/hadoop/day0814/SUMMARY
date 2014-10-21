@@ -1,0 +1,24 @@
+new mapreduce api:
+example 8-8
+example 8-9
+example 8-10-11
+example 8-12-15
+
+
+homework1
+h1:map端join
+下面是文件uid-sample.txt的内容和格式：
+57375476989eea12893c0c3811607bcf	1
+66c5bb7774e31d0a22278249b26bc83a	3
+b97920521c78de70ac38e3713f524b50	7
+6961d0c97fe93701fc9c0d861d096cd9	1
+f2f5a21c764aebde1e8afcc2871e086f	2
+96994a0480e7e1edcaef67b20d8816b7	1
+698956eb07815439fe5f46e9a4503997	6
+599cd26984f72ee68b2b6ebefccf6aed	3
+f577230df7b6c532837cd16ab731f874	5
+285f88780dd0659f5fc8acc7cc4949f2	2
+两个字段分别是UID和count值，分隔符是\t
+
+使用Map join，将上面文件中这些用户搜索过的关键词全部查找出来，格式是 uid\tkeyword
+（代码参见MapJoin.java，该类是使用old mapreduce api实现，请使用new api实现上面的需求）

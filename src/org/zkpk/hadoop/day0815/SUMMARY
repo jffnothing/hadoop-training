@@ -1,0 +1,17 @@
+example 8-16
+
+
+homework1:
+h1: JobControl使用
+Sogou 500w数据
+
+Job1：用户点击的URL连接到百度的所有搜索记录。例如：
+20111230000010	3d1acc7235374d531de1ca885df5e711	满江红	1	1	http://baike.baidu.com/view/6500.htm
+这条记录的URL就表示定位到了百度。
+
+Job2：对搜索过“%百度%”（模糊匹配）的所有搜索记录
+
+Job3：计算在job1和job2结果中都出现的独立用户列表，依赖job1和job2的输出结果
+
+
+

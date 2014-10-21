@@ -1,0 +1,55 @@
+#alter table
+alter table t3 rename to t3_1;
+
+show partitions t3_1;
+alter table t3_1 drop if exists partition(month='08',day='26');
+show partitions t3_1;
+
+
+alter table t3_1 add columns(count INT,ts STRING);
+describe t3_1;
+
+alter table t3_1 replace columns(ts STRING);
+describe t3_1;
+
+alter table t3_1 change column ts ts1 INT;
+describe t3_1;
+
+alter table t3_1 partition(month='08',day='27') enable no_drop;
+alter table t3_1 partition(month='08',day='27') enable offline;
+
+alter table t3_1 partition(month='08',day='27') disable no_drop;
+alter table t3_1 partition(month='08',day='27') disable offline;
+
+
+#load data
+create table t4(kw STRING, month STRING, day STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+create table t4_p(kw STRING) partitioned by(month STRING, day STRING)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+
+vi t4.txt
+load data local inpath '/home/zkpk/t4.txt' into table t4;
+
+insert overwrite table t4_p partition(month='08', day='28')
+select kw from t4 where month='08' and day='28' 
+
+
+set hive.exec.dynamic.partition.mode=nonstrict;
+insert overwrite table t4_p partition(month,day)
+select kw,month,day from t4;
+
+select * from t4_p where day='01';
+
+
+create table t4_copy as select kw,month,day from t4 where month='09';
+select * from t4_copy;
+
+
+insert overwrite local directory '/home/zkpk/t4.copy'
+select * from t4 where month = '09';
+
+
+
+
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+cat /home/zkpk/sogou.500w.utf8 | awk '{if($5<3 && length($3)>256 ){print $2}}' |uniq |sort  > hw201.txt
+

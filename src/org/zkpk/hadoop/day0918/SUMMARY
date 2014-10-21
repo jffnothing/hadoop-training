@@ -1,0 +1,8 @@
+homework:
+H1:
+调研kettle（开源ETL工具，类sqoop）的安装、使用，地址：
+http://community.pentaho.com/projects/data-integration/
+产出物：
+（1）kettle的图文安装文档，参照“实验手册”
+（2）kettle功能说明文档，包含kettle是什么、支持哪些存储、重点介绍支持hadoop的部分
+（3）使用kettle在本地/MySQL、HDFS、HBase之间执行ETL，图文操作文档

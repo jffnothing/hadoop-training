@@ -1,0 +1,7 @@
+H1:
+WordCountTopology.java 拓扑提交,UI查看,结果查看
+
+H2:
+脚本启动整个storm集群：
+（1）调研 storm 0.9.1 是否有免密钥启动整个集群的shell脚本代码
+（2）如果没有，参考start-all.sh和start-hbase.sh  编写启动脚本

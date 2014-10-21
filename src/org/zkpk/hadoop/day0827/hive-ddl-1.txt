@@ -1,0 +1,96 @@
+chapter 4:
+
+show databases;
+create database sogou;
+create database if not exists sogou;
+use sogou;
+show tables;
+
+show databases like 's.*';
+
+
+hadoop fs -ls /user/hive/warehouse/
+describe database sogou;
+create database if not exists test location '/test';
+
+create database if not exists test1 comment 'this is a bad db!';
+
+create database if not exists test2 
+with dbproperties('creator'='mark','date'='2014-01-01')
+
+#drop
+drop database test2;
+drop database if exists test2;
+
+use test1;
+create table t1(f1 STRING);
+show tables;
+drop database if exists test1;
+drop database if exists test1 cascade;
+
+#create table
+show create table docs;
+
+create table if not exists test.t2 like test.t1;
+show tables;
+show create table t2;
+
+use default;
+show tables in test;
+
+show tables 't.*';
+show tables like 't.*';
+
+describe extended test.t1;
+describe formatted test.t1;
+
+
+#partition
+use test;
+create table t3(f1 STRING)
+partitioned by(month STRING,day STRING);
+
+cat /proc/cpuinfo > docs
+load data local inpath '/home/zkpk/docs' 
+into table test.t3
+partition(month='08',day='27') 
+
+select * from t3 limit 2;
+
+select * from t3 limit 2;
+set hive.cli.print.header=true;
+select * from t3 limit 2;      
+
+select * from t3 where month='08' and day='27' limit 2;
+select * from t3 where month='08' and day='26' limit 2;
+
+
+cat /proc/meminfo > docs2
+load data local inpath '/home/zkpk/docs2' 
+into table test.t3
+partition(month='08',day='26') 
+
+
+set hive.mapred.mode=strict;
+select f1 from t3 limit 2;
+
+set hive.mapred.mode=nostrict;
+select f1 from t3 limit 2;
+
+
+show partitions test.t3;
+show partitions test.t3 partition(day='26');
+
+#partition for external table
+create external table t4(f1 STRING)
+partitioned by(month STRING,day STRING)
+location '/test2';
+
+use test;
+alter table t4 add partition(month='08',day='29') 
+location '/test2/08/29';
+
+#drop
+drop table test.t4;
+show tables;
+

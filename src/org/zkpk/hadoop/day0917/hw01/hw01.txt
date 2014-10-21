@@ -1,0 +1,15 @@
+H1：
+使用Sqoop将搜狗500w数据导入HBase中，要求：
+（1）rowkey=uid
+（2）整个表一个列族cf1
+（3）列族中包含其余5个列（除去uid）
+
+一．将文件加载到mysql中
+①：mysql中直接load
+load data local infile "/home/zkpk/exercise/0904/sogou" into table sogou_uid;
+二、再从mysql中加载到hbase中。
+Sqoop中：
+Sqoop import --connect jdbc:mysql://192.168.32.128:3306/sogou 
+--username hadoop--password hadoop --table sogou_uid 
+--hbase-table sogou_uid --column-family cf1 
+--hbase-row-key uid --hbase-create-table -m 1

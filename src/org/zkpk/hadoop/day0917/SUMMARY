@@ -1,0 +1,17 @@
+example:
+
+example 1
+将hbase table作为输入源示例
+example 2
+将hbase table作为输出源示例
+
+homework:
+H1：
+使用Sqoop将搜狗500w数据导入HBase中，要求：
+（1）rowkey=uid
+（2）整个表一个列族cf1
+（3）列族中包含其余5个列（除去uid）：
+
+H2：
+设计一张HBase表，存储sogou500w数据，rowkey要包含uid字段，
+表中每行存储500w文件的一行，并且要求表的行数刚好是500w

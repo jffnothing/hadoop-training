@@ -1,0 +1,12 @@
+H1.redis安装部署文档
+将500w数据灌入redis
+
+
+H2.在x86上搭建hbase集群，一个master,三个rs,三个zk.
+500w灌入时间对比
+native java
+mr
+bulk load
+三种方法详见day0923的H1,H2,H3.
+
+H3.基于hbase,使用mr统计每个用户的访问次数，列出top10用户 

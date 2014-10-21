@@ -1,0 +1,7 @@
+#!/usr/bin/expect
+spawn ssh slave
+  set timeout 30
+  expect "master"
+  send "cd /home/zkpk/storm-0.8.2\r"
+  send "bin/storm supervisor </dev/null 2<&1 &\r"
+  expect eof

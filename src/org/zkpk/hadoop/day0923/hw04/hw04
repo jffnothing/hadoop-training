@@ -1,0 +1,4 @@
+ hbase org.apache.hadoop.hbase.mapreduce.CopyTable 
+ --peer.adr=master:2181:/hbase 
+ --new.name=test1 
+ --families=cf1,cf2  test

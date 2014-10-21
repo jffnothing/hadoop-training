@@ -1,0 +1,9 @@
+执行storm-all.sh脚本之前的准备：
+1.安装expect
+	yum install expect
+2.编写脚本
+vi storm-all.sh
+vi ssh-sv
+3.执行脚本
+cd /home/zkpk/storm/bin
+./storm-all.sh

@@ -1,0 +1,18 @@
+implement the data requirement:
+example 7-2
+example 7-3
+example 7-4
+example 7-5
+example 7-6
+homework1
+h1：MultipleInputs
+数据输入1：Sogou 500w
+数据输入2：用户UID列表（取30个UID），转化为SequenceFile
+Join数据
+输出：UID列表中的UID对应的所有搜索关键词，即 uid\tkeyword
+
+homework2
+h2. MultipleOutputs
+sogou 500w数据
+查询次数大于2次的随机10个用户的完整数据展示（整条数据记录）
+每个用户的数据一个文件！

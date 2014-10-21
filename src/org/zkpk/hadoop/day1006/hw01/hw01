@@ -1,0 +1,14 @@
+H1:
+WordCountTopology.java拓扑提交，查看UI.
+整个工程代码在https://github.com/nathanmarz/storm-starter/下可见
+第一步：
+使用git bash工具下载storm-start
+git clone git@github.com:nathanmarz/storm-starter.git
+第二步：
+使用maven对该文件夹进行编译，打包。
+mvn clean
+mvn install
+第三步：
+使用storm执行生成的jar包
+bin/storm jar storm-starter-0.0.1-SNAPSHOT.jar storm.starter.WordCountTopology
+执行成功。

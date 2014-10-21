@@ -1,0 +1,54 @@
+#select from
+select t.kw from t4 t;
+
+select count(month) from t4;
+select count(distinct(month)) from t4;
+select avg(day) from t4;
+
+select percentile(cast(day as bigint),0.5) from t4;
+
+select kw,
+case
+when day > 29 then 'big'
+when day < 29 then 'small'
+else 'middle'	
+end from t4;
+
+set hive.fetch.task.conversion=minimal;
+set hive.fetch.task.conversion=more;
+select * from t4 where day='28';
+
+
+# group by
+select day,count(*) from t4 group by day;
+select day,count(*) as cnt from t4 group by day having cnt > 1;
+
+
+#join
+select * from t4 t join t4_copy tc on t.kw = tc.kw;
+select * from t4 t left outer join t4_copy tc on t.kw = tc.kw;
+select * from t4 t right outer join t4_copy tc on t.kw = tc.kw;
+select * from t4 t full outer join t4_copy tc on t.kw = tc.kw;
+
+select /*+MAPJOIN(tc)*/ * from t4 t join t4_copy tc on t.kw = tc.kw;
+
+select * from t4 distribute by day sort by day;
+select * from t4 cluster by day; 
+
+select * from t4 tablesample(bucket 3 out of 10 on rand()) s
+
+#union
+select count(*) from (
+select kw,day from t4
+union all
+select kw,day from t4_copy) a;
+
+
+
+
+
+
+
+
+
+

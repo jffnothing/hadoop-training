@@ -1,0 +1,12 @@
+load data inpath '/user/zkpk/docs' overwrite into table docs;
+
+select word,count(1) as count from(
+select explode(split(line,'\\s+')) as word from docs ) w
+group by word
+order by word limit 10;
+
+
+select word,count(1) as count from(
+select explode(split(line,'\\s+')) as word from docs )w
+group by word
+order by count desc limit 10;

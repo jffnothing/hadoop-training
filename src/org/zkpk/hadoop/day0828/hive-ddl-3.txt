@@ -1,0 +1,9 @@
+#view
+create view t4_view as
+select * from t4 where month='09';
+
+cp t4.txt t4.txt.copy
+load data local inpath '/home/zkpk/t4.txt.copy' into table t4;
+select * from t4_view;
+
+

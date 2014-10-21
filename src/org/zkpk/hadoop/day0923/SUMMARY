@@ -1,0 +1,19 @@
+使用三种方法向HBase中灌入Sogou 100w数据
+H1:
+Native java 灌入HBase时间和速度统计
+result: 5min,52sec
+
+H2:
+MR 灌入HBase时间和速度统计
+result: 8min,26sec
+
+H3:
+Bulk load 灌入HBase的时间和速度统计
+第一步：4min,34sec
+第二步：秒完
+
+H4：
+459 CopyTable
+
+H5：
+509 设置Linux最大打开文件句柄数

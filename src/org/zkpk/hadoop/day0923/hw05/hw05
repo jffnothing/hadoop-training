@@ -1,0 +1,10 @@
+1.在文件 /etc/security/limits.conf 最后添加下面的代码：
+
+zkpk - nofile 32768
+zkpk soft nproc 32000
+zkpk hard nproc 32000
+
+2.还需要对/etc/pam.d/config-util 做一些配置，否则在/etc/security/limits.conf 上的配
+置不会生效。将下面的代码放到/etc/pam.d/config-util 中，然后注销登录，配置生效
+
+session required pam_limits.so
